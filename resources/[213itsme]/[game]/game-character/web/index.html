@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>213ITSME - Création de personnage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-center-switch">
+    <button class="switch-item active" type="button" data-cam="body" aria-label="Personnage">
+      <i class="fa-solid fa-person"></i>
+    </button>
+
+    <button class="switch-item" type="button" data-cam="face" aria-label="Visage">
+      <i class="fa-solid fa-head-side-mask"></i>
+    </button>
+
+    <button class="switch-item" type="button" data-cam="body" aria-label="Vêtements">
+      <i class="fa-solid fa-shirt"></i>
+    </button>
+  </div>
+  <div class="page-bg"></div>
+  <main class="creator-ui">
+    <header class="hero">
+      <div class="hero-logo">
+        <i class="fa-solid fa-dna"></i>
+      </div>
+
+      <div class="hero-text">
+        <h1>213ITSME</h1>
+        <h2>CRÉATION DE PERSONNAGE</h2>
+      </div>
+    </header>
+
+    <div class="hero-line"></div>
+
+    <section class="content-wrap">
+      <aside class="sidebar">
+        <button class="side-item active" type="button" data-page-target="body">
+          <i class="fa-solid fa-person"></i>
+          <span>Corps</span>
+        </button>
+
+        <button class="side-item" type="button" data-page-target="hair">
+          <i class="fa-solid fa-scissors"></i>
+          <span>Pilosité</span>
+        </button>
+
+        <button class="side-item" type="button" data-page-target="face">
+          <i class="fa-solid fa-comment"></i>
+          <span>Visage</span>
+        </button>
+
+        <button class="side-item" type="button" data-page-target="traits">
+          <i class="fa-solid fa-face-smile"></i>
+          <span>Traits</span>
+        </button>
+
+        <button class="side-item" type="button" data-page-target="makeup">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Maquillage</span>
+        </button>
+
+        <button class="side-item" type="button" data-page-target="identity">
+          <i class="fa-solid fa-dna"></i>
+          <span>Identité</span>
+        </button>
+      </aside>
+
+      <section class="page-panels">
+        <section class="panel-page panel-page-body is-active" data-page="body">
+          <div class="panel-box">
+            <div class="panel-section">
+              <div class="panel-title">Type de personnage</div>
+              <div class="gender-tabs">
+                <button class="tab active" type="button" data-sex="0">Homme</button>
+                <button class="tab" type="button" data-sex="1">Femme</button>
+                <button class="tab disabled" type="button">Ped</button>
+              </div>
+            </div>
+
+            <div class="panel-section panel-section-person">
+              <div class="person-group">
+                <div class="group-label">Père</div>
+                <div class="person-row">
+                  <div class="avatar-frame">
+                    <img id="fatherImage" src="assets/character/dad/Adrian.png" alt="Père">
+                  </div>
+
+                  <div class="person-controls">
+                    <div class="tone-row">
+                      <button class="tone selected" type="button"></button>
+                      <button class="tone tone-2" type="button"></button>
+                      <button class="tone tone-3" type="button"></button>
+                      <button class="tone tone-4" type="button"></button>
+                      <button class="tone tone-5" type="button"></button>
+                      <button class="tone tone-6" type="button"></button>
+                    </div>
+
+                    <div class="selector-row" data-selector="father" data-image-target="fatherImage" data-image-folder="assets/character/dad">
+                      <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                      <div class="selector-name">Adrian</div>
+                      <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="person-group">
+                <div class="group-label">Mère</div>
+                <div class="person-row">
+                  <div class="avatar-frame">
+                    <img id="motherImage" src="assets/character/mom/Amelia.png" alt="Mère">
+                  </div>
+
+                  <div class="person-controls">
+                    <div class="tone-row">
+                      <button class="tone selected" type="button"></button>
+                      <button class="tone tone-2" type="button"></button>
+                      <button class="tone tone-3" type="button"></button>
+                      <button class="tone tone-4" type="button"></button>
+                      <button class="tone tone-5" type="button"></button>
+                      <button class="tone tone-6" type="button"></button>
+                    </div>
+
+                    <div class="selector-row" data-selector="mother" data-image-target="motherImage" data-image-folder="assets/character/mom">
+                      <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                      <div class="selector-name">Amelia</div>
+                      <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slider-block">
+                <div class="slider-head">
+                  <span>Ressemblance du visage</span>
+                  <span class="slider-value">50%</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="game-slider" data-skin-key="face_md_weight">
+              </div>
+
+              <div class="slider-block">
+                <div class="slider-head">
+                  <span>Mix couleur de peau</span>
+                  <span class="slider-value">50%</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="game-slider" data-skin-key="skin_md_weight">
+              </div>
+            </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-page panel-page-hair" data-page="hair">
+          <div class="panel-scroll-shell">
+            <div class="panel-scroll-viewport" id="hairPanelViewport">
+              <div class="panel-scroll-content">
+                <div class="panel-section hair-section">
+                  <div class="panel-title">Cheveux</div>
+
+                  <div class="selector-row" data-selector="hair">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Coupe 0</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur</div>
+                    <div class="color-grid" data-swatch-group>
+                      <button class="color-swatch is-selected is-empty" type="button"></button>
+                      <button class="color-swatch c01" type="button"></button>
+                      <button class="color-swatch c02" type="button"></button>
+                      <button class="color-swatch c03" type="button"></button>
+                      <button class="color-swatch c04" type="button"></button>
+                      <button class="color-swatch c05" type="button"></button>
+                      <button class="color-swatch c06" type="button"></button>
+                      <button class="color-swatch c07" type="button"></button>
+                      <button class="color-swatch c08" type="button"></button>
+                      <button class="color-swatch c09" type="button"></button>
+                      <button class="color-swatch c10" type="button"></button>
+                      <button class="color-swatch c11" type="button"></button>
+                      <button class="color-swatch c12" type="button"></button>
+                      <button class="color-swatch c13" type="button"></button>
+                      <button class="color-swatch c14" type="button"></button>
+                      <button class="color-swatch c15" type="button"></button>
+                      <button class="color-swatch c16" type="button"></button>
+                      <button class="color-swatch c17" type="button"></button>
+                      <button class="color-swatch c18" type="button"></button>
+                      <button class="color-swatch c19" type="button"></button>
+                      <button class="color-swatch c20" type="button"></button>
+                      <button class="color-swatch c21" type="button"></button>
+                      <button class="color-swatch c22" type="button"></button>
+                      <button class="color-swatch c23" type="button"></button>
+                      <button class="color-swatch c24" type="button"></button>
+                      <button class="color-swatch c25" type="button"></button>
+                      <button class="color-swatch c26" type="button"></button>
+                      <button class="color-swatch c27" type="button"></button>
+                      <button class="color-swatch c28" type="button"></button>
+                      <button class="color-swatch c29" type="button"></button>
+                      <button class="color-swatch c30" type="button"></button>
+                      <button class="color-swatch c31" type="button"></button>
+                      <button class="color-swatch c32" type="button"></button>
+                      <button class="color-swatch c33" type="button"></button>
+                      <button class="color-swatch c34" type="button"></button>
+                      <button class="color-swatch c35" type="button"></button>
+                      <button class="color-swatch c36" type="button"></button>
+                      <button class="color-swatch c37" type="button"></button>
+                      <button class="color-swatch c38" type="button"></button>
+                      <button class="color-swatch c39" type="button"></button>
+                      <button class="color-swatch c40" type="button"></button>
+                      <button class="color-swatch c41" type="button"></button>
+                      <button class="color-swatch c42" type="button"></button>
+                      <button class="color-swatch c43" type="button"></button>
+                      <button class="color-swatch c44" type="button"></button>
+                      <button class="color-swatch c45" type="button"></button>
+                      <button class="color-swatch c46" type="button"></button>
+                      <button class="color-swatch c47" type="button"></button>
+                      <button class="color-swatch c48" type="button"></button>
+                      <button class="color-swatch c49" type="button"></button>
+                      <button class="color-swatch c50" type="button"></button>
+                      <button class="color-swatch c51" type="button"></button>
+                      <button class="color-swatch c52" type="button"></button>
+                      <button class="color-swatch c53" type="button"></button>
+                      <button class="color-swatch c54" type="button"></button>
+                    </div>
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur secondaire</div>
+                    <div class="color-grid" data-swatch-group>
+                      <button class="color-swatch is-selected is-empty" type="button"></button>
+                      <button class="color-swatch c01" type="button"></button>
+                      <button class="color-swatch c02" type="button"></button>
+                      <button class="color-swatch c03" type="button"></button>
+                      <button class="color-swatch c04" type="button"></button>
+                      <button class="color-swatch c05" type="button"></button>
+                      <button class="color-swatch c06" type="button"></button>
+                      <button class="color-swatch c07" type="button"></button>
+                      <button class="color-swatch c08" type="button"></button>
+                      <button class="color-swatch c09" type="button"></button>
+                      <button class="color-swatch c10" type="button"></button>
+                      <button class="color-swatch c11" type="button"></button>
+                      <button class="color-swatch c12" type="button"></button>
+                      <button class="color-swatch c13" type="button"></button>
+                      <button class="color-swatch c14" type="button"></button>
+                      <button class="color-swatch c15" type="button"></button>
+                      <button class="color-swatch c16" type="button"></button>
+                      <button class="color-swatch c17" type="button"></button>
+                      <button class="color-swatch c18" type="button"></button>
+                      <button class="color-swatch c19" type="button"></button>
+                      <button class="color-swatch c20" type="button"></button>
+                      <button class="color-swatch c21" type="button"></button>
+                      <button class="color-swatch c22" type="button"></button>
+                      <button class="color-swatch c23" type="button"></button>
+                      <button class="color-swatch c24" type="button"></button>
+                      <button class="color-swatch c25" type="button"></button>
+                      <button class="color-swatch c26" type="button"></button>
+                      <button class="color-swatch c27" type="button"></button>
+                      <button class="color-swatch c28" type="button"></button>
+                      <button class="color-swatch c29" type="button"></button>
+                      <button class="color-swatch c30" type="button"></button>
+                      <button class="color-swatch c31" type="button"></button>
+                      <button class="color-swatch c32" type="button"></button>
+                      <button class="color-swatch c33" type="button"></button>
+                      <button class="color-swatch c34" type="button"></button>
+                      <button class="color-swatch c35" type="button"></button>
+                      <button class="color-swatch c36" type="button"></button>
+                      <button class="color-swatch c37" type="button"></button>
+                      <button class="color-swatch c38" type="button"></button>
+                      <button class="color-swatch c39" type="button"></button>
+                      <button class="color-swatch c40" type="button"></button>
+                      <button class="color-swatch c41" type="button"></button>
+                      <button class="color-swatch c42" type="button"></button>
+                      <button class="color-swatch c43" type="button"></button>
+                      <button class="color-swatch c44" type="button"></button>
+                      <button class="color-swatch c45" type="button"></button>
+                      <button class="color-swatch c46" type="button"></button>
+                      <button class="color-swatch c47" type="button"></button>
+                      <button class="color-swatch c48" type="button"></button>
+                      <button class="color-swatch c49" type="button"></button>
+                      <button class="color-swatch c50" type="button"></button>
+                      <button class="color-swatch c51" type="button"></button>
+                      <button class="color-swatch c52" type="button"></button>
+                      <button class="color-swatch c53" type="button"></button>
+                      <button class="color-swatch c54" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel-section hair-section">
+                  <div class="panel-title">Sourcils</div>
+
+                  <div class="selector-row" data-selector="eyebrows">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur</div>
+                    <div class="color-grid color-grid-compact" data-swatch-group>
+                      <button class="color-swatch is-selected is-empty" type="button"></button>
+                      <button class="color-swatch c01" type="button"></button>
+                      <button class="color-swatch c02" type="button"></button>
+                      <button class="color-swatch c03" type="button"></button>
+                      <button class="color-swatch c04" type="button"></button>
+                      <button class="color-swatch c05" type="button"></button>
+                      <button class="color-swatch c06" type="button"></button>
+                      <button class="color-swatch c07" type="button"></button>
+                      <button class="color-swatch c08" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel-section hair-section">
+                  <div class="panel-title">Barbe</div>
+
+                  <div class="selector-row" data-selector="beard">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucune</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">75%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="75" class="game-slider">
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur</div>
+                    <div class="color-grid color-grid-compact" data-swatch-group>
+                      <button class="color-swatch is-selected is-empty" type="button"></button>
+                      <button class="color-swatch c01" type="button"></button>
+                      <button class="color-swatch c02" type="button"></button>
+                      <button class="color-swatch c03" type="button"></button>
+                      <button class="color-swatch c04" type="button"></button>
+                      <button class="color-swatch c05" type="button"></button>
+                      <button class="color-swatch c06" type="button"></button>
+                      <button class="color-swatch c07" type="button"></button>
+                      <button class="color-swatch c08" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel-section hair-section">
+                  <div class="panel-title">Poil torse</div>
+
+                  <div class="selector-row" data-selector="chesthair">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">60%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="60" class="game-slider">
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur</div>
+                    <div class="color-grid color-grid-compact" data-swatch-group>
+                      <button class="color-swatch is-selected is-empty" type="button"></button>
+                      <button class="color-swatch c01" type="button"></button>
+                      <button class="color-swatch c02" type="button"></button>
+                      <button class="color-swatch c03" type="button"></button>
+                      <button class="color-swatch c04" type="button"></button>
+                      <button class="color-swatch c05" type="button"></button>
+                      <button class="color-swatch c06" type="button"></button>
+                      <button class="color-swatch c07" type="button"></button>
+                      <button class="color-swatch c08" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-scroll">
+              <div class="custom-scroll-thumb" id="hairPanelThumb"></div>
+            </div>
+          </div>
+        </section>
+        <section class="panel-page panel-page-face" data-page="face">
+          <div class="panel-scroll-shell">
+            <div class="panel-scroll-viewport" id="facePanelViewport">
+              <div class="panel-scroll-content">
+                <div class="panel-section face-section">
+                  <div class="panel-title">Couleur des yeux</div>
+
+                  <div class="palette-group face-eye-palette">
+                    <div class="color-grid color-grid-eyes" data-swatch-group>
+                      <button class="color-swatch eye01" type="button"></button>
+                      <button class="color-swatch eye02" type="button"></button>
+                      <button class="color-swatch eye03" type="button"></button>
+                      <button class="color-swatch eye04" type="button"></button>
+                      <button class="color-swatch eye05" type="button"></button>
+                      <button class="color-swatch eye06" type="button"></button>
+                      <button class="color-swatch eye07" type="button"></button>
+                      <button class="color-swatch eye08" type="button"></button>
+                      <button class="color-swatch eye09" type="button"></button>
+
+                      <button class="color-swatch eye10" type="button"></button>
+                      <button class="color-swatch eye11" type="button"></button>
+                      <button class="color-swatch eye12 is-selected" type="button"></button>
+                      <button class="color-swatch eye13" type="button"></button>
+                      <button class="color-swatch eye14" type="button"></button>
+                      <button class="color-swatch eye15" type="button"></button>
+                      <button class="color-swatch eye16" type="button"></button>
+                      <button class="color-swatch eye17" type="button"></button>
+                      <button class="color-swatch eye18" type="button"></button>
+
+                      <button class="color-swatch eye19" type="button"></button>
+                      <button class="color-swatch eye20" type="button"></button>
+                      <button class="color-swatch eye21" type="button"></button>
+                      <button class="color-swatch eye22" type="button"></button>
+                      <button class="color-swatch eye23" type="button"></button>
+                      <button class="color-swatch eye24" type="button"></button>
+                      <button class="color-swatch eye25" type="button"></button>
+                      <button class="color-swatch eye26" type="button"></button>
+                      <button class="color-swatch eye27" type="button"></button>
+
+                      <button class="color-swatch eye28" type="button"></button>
+                      <button class="color-swatch eye29" type="button"></button>
+                      <button class="color-swatch eye30" type="button"></button>
+                      <button class="color-swatch eye31" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel-section face-section">
+                  <div class="panel-title">Imperfections</div>
+
+                  <div class="selector-row" data-selector="blemishes">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+                </div>
+
+                <div class="panel-section face-section">
+                  <div class="panel-title">Vieillissement</div>
+
+                  <div class="selector-row" data-selector="aging">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+                </div>
+
+                <div class="panel-section face-section">
+                  <div class="panel-title">Teint</div>
+
+                  <div class="selector-row" data-selector="complexion">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+                </div>
+
+                <div class="panel-section face-section">
+                  <div class="panel-title">Dommages du soleil</div>
+
+                  <div class="selector-row" data-selector="sunDamage">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+                </div>
+
+                <div class="panel-section face-section">
+                  <div class="panel-title">Grains de beauté</div>
+
+                  <div class="selector-row" data-selector="moles">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+                </div>
+
+                <div class="panel-section face-section">
+                  <div class="panel-title">Imperfection du corps</div>
+
+                  <div class="selector-row" data-selector="bodyBlemish">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+                </div>
+
+                <div class="panel-section face-section">
+                  <div class="panel-title">Imperfection du corps 2</div>
+
+                  <div class="selector-row" data-selector="bodyBlemish2">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-scroll">
+              <div class="custom-scroll-thumb" id="facePanelThumb"></div>
+            </div>
+          </div>
+        </section>
+        <section class="panel-page panel-page-traits" data-page="traits">
+          <div class="panel-scroll-shell">
+            <div class="panel-scroll-viewport" id="traitsPanelViewport">
+              <div class="panel-scroll-content">
+<div class="panel-section traits-section">
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Largeur du nez</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="nose_1">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Hauteur du nez</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="nose_2">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Longueur du nez</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="nose_3">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Courbure du nez</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="nose_4">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Pointe du nez</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="nose_5">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Torsion du nez</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="nose_6">
+  </div>
+</div>
+
+<div class="panel-section traits-section">
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Hauteur des sourcils</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="eyebrows_5">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Profondeur des sourcils</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="eyebrows_6">
+  </div>
+</div>
+
+<div class="panel-section traits-section">
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Hauteur des joues</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="cheeks_1">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Gonflement des joues</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="cheeks_2">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Largeur des joues</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="cheeks_3">
+  </div>
+</div>
+
+<div class="panel-section traits-section">
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Ouverture des paupières</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="eye_opening">
+  </div>
+</div>
+
+<div class="panel-section traits-section">
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Epaisseur des lèvres</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="lip_thickness">
+  </div>
+</div>
+
+<div class="panel-section traits-section">
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Largeur de la mâchoire</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="jaw_1">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Forme de la mâchoire</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="jaw_2">
+  </div>
+</div>
+
+<div class="panel-section traits-section">
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Hauteur du menton</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="chin_1">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Largeur du menton</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="chin_2">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Forme du menton</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="chin_3">
+  </div>
+
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Bosse du menton</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="chin_4">
+  </div>
+</div>
+
+<div class="panel-section traits-section">
+  <div class="trait-slider-block">
+    <div class="slider-head">
+      <span>Epaisseur du cou</span>
+      <span class="slider-value">50%</span>
+    </div>
+    <input type="range" min="0" max="100" value="50" class="game-slider" data-trait-key="neck_thickness">
+  </div>
+</div>
+              </div>
+            </div>
+
+            <div class="custom-scroll">
+              <div class="custom-scroll-thumb" id="traitsPanelThumb"></div>
+            </div>
+          </div>
+        </section>
+        <section class="panel-page panel-page-makeup" data-page="makeup">
+          <div class="panel-scroll-shell">
+            <div class="panel-scroll-viewport" id="makeupPanelViewport">
+              <div class="panel-scroll-content">
+                <div class="panel-section makeup-section">
+                  <div class="panel-title">Maquillage</div>
+
+                  <div class="selector-row" data-selector="makeup">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur</div>
+                    <div class="color-grid" data-swatch-group>
+                      <button class="color-swatch is-selected mk01" type="button"></button>
+                      <button class="color-swatch mk02" type="button"></button>
+                      <button class="color-swatch mk03" type="button"></button>
+                      <button class="color-swatch mk04" type="button"></button>
+                      <button class="color-swatch mk05" type="button"></button>
+                      <button class="color-swatch mk06" type="button"></button>
+                      <button class="color-swatch mk07" type="button"></button>
+                      <button class="color-swatch mk08" type="button"></button>
+                      <button class="color-swatch mk09" type="button"></button>
+
+                      <button class="color-swatch mk10" type="button"></button>
+                      <button class="color-swatch mk11" type="button"></button>
+                      <button class="color-swatch mk12" type="button"></button>
+                      <button class="color-swatch mk13" type="button"></button>
+                      <button class="color-swatch mk14" type="button"></button>
+                      <button class="color-swatch mk15" type="button"></button>
+                      <button class="color-swatch mk16" type="button"></button>
+                      <button class="color-swatch mk17" type="button"></button>
+                      <button class="color-swatch mk18" type="button"></button>
+
+                      <button class="color-swatch mk19" type="button"></button>
+                      <button class="color-swatch mk20" type="button"></button>
+                      <button class="color-swatch mk21" type="button"></button>
+                      <button class="color-swatch mk22" type="button"></button>
+                      <button class="color-swatch mk23" type="button"></button>
+                      <button class="color-swatch mk24" type="button"></button>
+                      <button class="color-swatch mk25" type="button"></button>
+                      <button class="color-swatch mk26" type="button"></button>
+                      <button class="color-swatch mk27" type="button"></button>
+
+                      <button class="color-swatch mk28" type="button"></button>
+                      <button class="color-swatch mk29" type="button"></button>
+                      <button class="color-swatch mk30" type="button"></button>
+                      <button class="color-swatch mk31" type="button"></button>
+                      <button class="color-swatch mk32" type="button"></button>
+                      <button class="color-swatch mk33" type="button"></button>
+                      <button class="color-swatch mk34" type="button"></button>
+                      <button class="color-swatch mk35" type="button"></button>
+                      <button class="color-swatch mk36" type="button"></button>
+
+                      <button class="color-swatch mk37" type="button"></button>
+                      <button class="color-swatch mk38" type="button"></button>
+                      <button class="color-swatch mk39" type="button"></button>
+                      <button class="color-swatch mk40" type="button"></button>
+                      <button class="color-swatch mk41" type="button"></button>
+                      <button class="color-swatch mk42" type="button"></button>
+                      <button class="color-swatch mk43" type="button"></button>
+                      <button class="color-swatch mk44" type="button"></button>
+                      <button class="color-swatch mk45" type="button"></button>
+
+                      <button class="color-swatch mk46" type="button"></button>
+                      <button class="color-swatch mk47" type="button"></button>
+                      <button class="color-swatch mk48" type="button"></button>
+                      <button class="color-swatch mk49" type="button"></button>
+                      <button class="color-swatch mk50" type="button"></button>
+                      <button class="color-swatch mk51" type="button"></button>
+                      <button class="color-swatch mk52" type="button"></button>
+                      <button class="color-swatch mk53" type="button"></button>
+                      <button class="color-swatch mk54" type="button"></button>
+
+                      <button class="color-swatch mk55" type="button"></button>
+                      <button class="color-swatch mk56" type="button"></button>
+                      <button class="color-swatch mk57" type="button"></button>
+                      <button class="color-swatch mk58" type="button"></button>
+                      <button class="color-swatch mk59" type="button"></button>
+                      <button class="color-swatch mk60" type="button"></button>
+                      <button class="color-swatch mk61" type="button"></button>
+                      <button class="color-swatch mk62" type="button"></button>
+                      <button class="color-swatch mk63" type="button"></button>
+
+                      <button class="color-swatch mk64" type="button"></button>
+                    </div>
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur secondaire</div>
+                    <div class="color-grid" data-swatch-group>
+                      <button class="color-swatch is-selected mk01" type="button"></button>
+                      <button class="color-swatch mk02" type="button"></button>
+                      <button class="color-swatch mk03" type="button"></button>
+                      <button class="color-swatch mk04" type="button"></button>
+                      <button class="color-swatch mk05" type="button"></button>
+                      <button class="color-swatch mk06" type="button"></button>
+                      <button class="color-swatch mk07" type="button"></button>
+                      <button class="color-swatch mk08" type="button"></button>
+                      <button class="color-swatch mk09" type="button"></button>
+
+                      <button class="color-swatch mk10" type="button"></button>
+                      <button class="color-swatch mk11" type="button"></button>
+                      <button class="color-swatch mk12" type="button"></button>
+                      <button class="color-swatch mk13" type="button"></button>
+                      <button class="color-swatch mk14" type="button"></button>
+                      <button class="color-swatch mk15" type="button"></button>
+                      <button class="color-swatch mk16" type="button"></button>
+                      <button class="color-swatch mk17" type="button"></button>
+                      <button class="color-swatch mk18" type="button"></button>
+
+                      <button class="color-swatch mk19" type="button"></button>
+                      <button class="color-swatch mk20" type="button"></button>
+                      <button class="color-swatch mk21" type="button"></button>
+                      <button class="color-swatch mk22" type="button"></button>
+                      <button class="color-swatch mk23" type="button"></button>
+                      <button class="color-swatch mk24" type="button"></button>
+                      <button class="color-swatch mk25" type="button"></button>
+                      <button class="color-swatch mk26" type="button"></button>
+                      <button class="color-swatch mk27" type="button"></button>
+
+                      <button class="color-swatch mk28" type="button"></button>
+                      <button class="color-swatch mk29" type="button"></button>
+                      <button class="color-swatch mk30" type="button"></button>
+                      <button class="color-swatch mk31" type="button"></button>
+                      <button class="color-swatch mk32" type="button"></button>
+                      <button class="color-swatch mk33" type="button"></button>
+                      <button class="color-swatch mk34" type="button"></button>
+                      <button class="color-swatch mk35" type="button"></button>
+                      <button class="color-swatch mk36" type="button"></button>
+
+                      <button class="color-swatch mk37" type="button"></button>
+                      <button class="color-swatch mk38" type="button"></button>
+                      <button class="color-swatch mk39" type="button"></button>
+                      <button class="color-swatch mk40" type="button"></button>
+                      <button class="color-swatch mk41" type="button"></button>
+                      <button class="color-swatch mk42" type="button"></button>
+                      <button class="color-swatch mk43" type="button"></button>
+                      <button class="color-swatch mk44" type="button"></button>
+                      <button class="color-swatch mk45" type="button"></button>
+
+                      <button class="color-swatch mk46" type="button"></button>
+                      <button class="color-swatch mk47" type="button"></button>
+                      <button class="color-swatch mk48" type="button"></button>
+                      <button class="color-swatch mk49" type="button"></button>
+                      <button class="color-swatch mk50" type="button"></button>
+                      <button class="color-swatch mk51" type="button"></button>
+                      <button class="color-swatch mk52" type="button"></button>
+                      <button class="color-swatch mk53" type="button"></button>
+                      <button class="color-swatch mk54" type="button"></button>
+
+                      <button class="color-swatch mk55" type="button"></button>
+                      <button class="color-swatch mk56" type="button"></button>
+                      <button class="color-swatch mk57" type="button"></button>
+                      <button class="color-swatch mk58" type="button"></button>
+                      <button class="color-swatch mk59" type="button"></button>
+                      <button class="color-swatch mk60" type="button"></button>
+                      <button class="color-swatch mk61" type="button"></button>
+                      <button class="color-swatch mk62" type="button"></button>
+                      <button class="color-swatch mk63" type="button"></button>
+
+                      <button class="color-swatch mk64" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel-section makeup-section">
+                  <div class="panel-title">Blush</div>
+
+                  <div class="selector-row" data-selector="blush">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur</div>
+                    <div class="color-grid" data-swatch-group>
+                      <button class="color-swatch is-selected mk01" type="button"></button>
+                      <button class="color-swatch mk02" type="button"></button>
+                      <button class="color-swatch mk03" type="button"></button>
+                      <button class="color-swatch mk04" type="button"></button>
+                      <button class="color-swatch mk05" type="button"></button>
+                      <button class="color-swatch mk06" type="button"></button>
+                      <button class="color-swatch mk07" type="button"></button>
+                      <button class="color-swatch mk08" type="button"></button>
+                      <button class="color-swatch mk09" type="button"></button>
+
+                      <button class="color-swatch mk10" type="button"></button>
+                      <button class="color-swatch mk11" type="button"></button>
+                      <button class="color-swatch mk12" type="button"></button>
+                      <button class="color-swatch mk13" type="button"></button>
+                      <button class="color-swatch mk14" type="button"></button>
+                      <button class="color-swatch mk15" type="button"></button>
+                      <button class="color-swatch mk16" type="button"></button>
+                      <button class="color-swatch mk17" type="button"></button>
+                      <button class="color-swatch mk18" type="button"></button>
+
+                      <button class="color-swatch mk19" type="button"></button>
+                      <button class="color-swatch mk20" type="button"></button>
+                      <button class="color-swatch mk21" type="button"></button>
+                      <button class="color-swatch mk22" type="button"></button>
+                      <button class="color-swatch mk23" type="button"></button>
+                      <button class="color-swatch mk24" type="button"></button>
+                      <button class="color-swatch mk25" type="button"></button>
+                      <button class="color-swatch mk26" type="button"></button>
+                      <button class="color-swatch mk27" type="button"></button>
+
+                      <button class="color-swatch mk28" type="button"></button>
+                      <button class="color-swatch mk29" type="button"></button>
+                      <button class="color-swatch mk30" type="button"></button>
+                      <button class="color-swatch mk31" type="button"></button>
+                      <button class="color-swatch mk32" type="button"></button>
+                      <button class="color-swatch mk33" type="button"></button>
+                      <button class="color-swatch mk34" type="button"></button>
+                      <button class="color-swatch mk35" type="button"></button>
+                      <button class="color-swatch mk36" type="button"></button>
+
+                      <button class="color-swatch mk37" type="button"></button>
+                      <button class="color-swatch mk38" type="button"></button>
+                      <button class="color-swatch mk39" type="button"></button>
+                      <button class="color-swatch mk40" type="button"></button>
+                      <button class="color-swatch mk41" type="button"></button>
+                      <button class="color-swatch mk42" type="button"></button>
+                      <button class="color-swatch mk43" type="button"></button>
+                      <button class="color-swatch mk44" type="button"></button>
+                      <button class="color-swatch mk45" type="button"></button>
+
+                      <button class="color-swatch mk46" type="button"></button>
+                      <button class="color-swatch mk47" type="button"></button>
+                      <button class="color-swatch mk48" type="button"></button>
+                      <button class="color-swatch mk49" type="button"></button>
+                      <button class="color-swatch mk50" type="button"></button>
+                      <button class="color-swatch mk51" type="button"></button>
+                      <button class="color-swatch mk52" type="button"></button>
+                      <button class="color-swatch mk53" type="button"></button>
+                      <button class="color-swatch mk54" type="button"></button>
+
+                      <button class="color-swatch mk55" type="button"></button>
+                      <button class="color-swatch mk56" type="button"></button>
+                      <button class="color-swatch mk57" type="button"></button>
+                      <button class="color-swatch mk58" type="button"></button>
+                      <button class="color-swatch mk59" type="button"></button>
+                      <button class="color-swatch mk60" type="button"></button>
+                      <button class="color-swatch mk61" type="button"></button>
+                      <button class="color-swatch mk62" type="button"></button>
+                      <button class="color-swatch mk63" type="button"></button>
+
+                      <button class="color-swatch mk64" type="button"></button>
+                    </div>
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur secondaire</div>
+                    <div class="color-grid" data-swatch-group>
+                      <button class="color-swatch is-selected mk01" type="button"></button>
+                      <button class="color-swatch mk02" type="button"></button>
+                      <button class="color-swatch mk03" type="button"></button>
+                      <button class="color-swatch mk04" type="button"></button>
+                      <button class="color-swatch mk05" type="button"></button>
+                      <button class="color-swatch mk06" type="button"></button>
+                      <button class="color-swatch mk07" type="button"></button>
+                      <button class="color-swatch mk08" type="button"></button>
+                      <button class="color-swatch mk09" type="button"></button>
+
+                      <button class="color-swatch mk10" type="button"></button>
+                      <button class="color-swatch mk11" type="button"></button>
+                      <button class="color-swatch mk12" type="button"></button>
+                      <button class="color-swatch mk13" type="button"></button>
+                      <button class="color-swatch mk14" type="button"></button>
+                      <button class="color-swatch mk15" type="button"></button>
+                      <button class="color-swatch mk16" type="button"></button>
+                      <button class="color-swatch mk17" type="button"></button>
+                      <button class="color-swatch mk18" type="button"></button>
+
+                      <button class="color-swatch mk19" type="button"></button>
+                      <button class="color-swatch mk20" type="button"></button>
+                      <button class="color-swatch mk21" type="button"></button>
+                      <button class="color-swatch mk22" type="button"></button>
+                      <button class="color-swatch mk23" type="button"></button>
+                      <button class="color-swatch mk24" type="button"></button>
+                      <button class="color-swatch mk25" type="button"></button>
+                      <button class="color-swatch mk26" type="button"></button>
+                      <button class="color-swatch mk27" type="button"></button>
+
+                      <button class="color-swatch mk28" type="button"></button>
+                      <button class="color-swatch mk29" type="button"></button>
+                      <button class="color-swatch mk30" type="button"></button>
+                      <button class="color-swatch mk31" type="button"></button>
+                      <button class="color-swatch mk32" type="button"></button>
+                      <button class="color-swatch mk33" type="button"></button>
+                      <button class="color-swatch mk34" type="button"></button>
+                      <button class="color-swatch mk35" type="button"></button>
+                      <button class="color-swatch mk36" type="button"></button>
+
+                      <button class="color-swatch mk37" type="button"></button>
+                      <button class="color-swatch mk38" type="button"></button>
+                      <button class="color-swatch mk39" type="button"></button>
+                      <button class="color-swatch mk40" type="button"></button>
+                      <button class="color-swatch mk41" type="button"></button>
+                      <button class="color-swatch mk42" type="button"></button>
+                      <button class="color-swatch mk43" type="button"></button>
+                      <button class="color-swatch mk44" type="button"></button>
+                      <button class="color-swatch mk45" type="button"></button>
+
+                      <button class="color-swatch mk46" type="button"></button>
+                      <button class="color-swatch mk47" type="button"></button>
+                      <button class="color-swatch mk48" type="button"></button>
+                      <button class="color-swatch mk49" type="button"></button>
+                      <button class="color-swatch mk50" type="button"></button>
+                      <button class="color-swatch mk51" type="button"></button>
+                      <button class="color-swatch mk52" type="button"></button>
+                      <button class="color-swatch mk53" type="button"></button>
+                      <button class="color-swatch mk54" type="button"></button>
+
+                      <button class="color-swatch mk55" type="button"></button>
+                      <button class="color-swatch mk56" type="button"></button>
+                      <button class="color-swatch mk57" type="button"></button>
+                      <button class="color-swatch mk58" type="button"></button>
+                      <button class="color-swatch mk59" type="button"></button>
+                      <button class="color-swatch mk60" type="button"></button>
+                      <button class="color-swatch mk61" type="button"></button>
+                      <button class="color-swatch mk62" type="button"></button>
+                      <button class="color-swatch mk63" type="button"></button>
+
+                      <button class="color-swatch mk64" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel-section makeup-section">
+                  <div class="panel-title">Rouge à lèvre</div>
+
+                  <div class="selector-row" data-selector="lipstick">
+                    <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="selector-name">Aucun</div>
+                    <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+
+                  <div class="slider-block">
+                    <div class="slider-head">
+                      <span>Opacité</span>
+                      <span class="slider-value">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="game-slider">
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur</div>
+                    <div class="color-grid" data-swatch-group>
+                      <button class="color-swatch is-selected mk01" type="button"></button>
+                      <button class="color-swatch mk02" type="button"></button>
+                      <button class="color-swatch mk03" type="button"></button>
+                      <button class="color-swatch mk04" type="button"></button>
+                      <button class="color-swatch mk05" type="button"></button>
+                      <button class="color-swatch mk06" type="button"></button>
+                      <button class="color-swatch mk07" type="button"></button>
+                      <button class="color-swatch mk08" type="button"></button>
+                      <button class="color-swatch mk09" type="button"></button>
+
+                      <button class="color-swatch mk10" type="button"></button>
+                      <button class="color-swatch mk11" type="button"></button>
+                      <button class="color-swatch mk12" type="button"></button>
+                      <button class="color-swatch mk13" type="button"></button>
+                      <button class="color-swatch mk14" type="button"></button>
+                      <button class="color-swatch mk15" type="button"></button>
+                      <button class="color-swatch mk16" type="button"></button>
+                      <button class="color-swatch mk17" type="button"></button>
+                      <button class="color-swatch mk18" type="button"></button>
+
+                      <button class="color-swatch mk19" type="button"></button>
+                      <button class="color-swatch mk20" type="button"></button>
+                      <button class="color-swatch mk21" type="button"></button>
+                      <button class="color-swatch mk22" type="button"></button>
+                      <button class="color-swatch mk23" type="button"></button>
+                      <button class="color-swatch mk24" type="button"></button>
+                      <button class="color-swatch mk25" type="button"></button>
+                      <button class="color-swatch mk26" type="button"></button>
+                      <button class="color-swatch mk27" type="button"></button>
+
+                      <button class="color-swatch mk28" type="button"></button>
+                      <button class="color-swatch mk29" type="button"></button>
+                      <button class="color-swatch mk30" type="button"></button>
+                      <button class="color-swatch mk31" type="button"></button>
+                      <button class="color-swatch mk32" type="button"></button>
+                      <button class="color-swatch mk33" type="button"></button>
+                      <button class="color-swatch mk34" type="button"></button>
+                      <button class="color-swatch mk35" type="button"></button>
+                      <button class="color-swatch mk36" type="button"></button>
+
+                      <button class="color-swatch mk37" type="button"></button>
+                      <button class="color-swatch mk38" type="button"></button>
+                      <button class="color-swatch mk39" type="button"></button>
+                      <button class="color-swatch mk40" type="button"></button>
+                      <button class="color-swatch mk41" type="button"></button>
+                      <button class="color-swatch mk42" type="button"></button>
+                      <button class="color-swatch mk43" type="button"></button>
+                      <button class="color-swatch mk44" type="button"></button>
+                      <button class="color-swatch mk45" type="button"></button>
+
+                      <button class="color-swatch mk46" type="button"></button>
+                      <button class="color-swatch mk47" type="button"></button>
+                      <button class="color-swatch mk48" type="button"></button>
+                      <button class="color-swatch mk49" type="button"></button>
+                      <button class="color-swatch mk50" type="button"></button>
+                      <button class="color-swatch mk51" type="button"></button>
+                      <button class="color-swatch mk52" type="button"></button>
+                      <button class="color-swatch mk53" type="button"></button>
+                      <button class="color-swatch mk54" type="button"></button>
+
+                      <button class="color-swatch mk55" type="button"></button>
+                      <button class="color-swatch mk56" type="button"></button>
+                      <button class="color-swatch mk57" type="button"></button>
+                      <button class="color-swatch mk58" type="button"></button>
+                      <button class="color-swatch mk59" type="button"></button>
+                      <button class="color-swatch mk60" type="button"></button>
+                      <button class="color-swatch mk61" type="button"></button>
+                      <button class="color-swatch mk62" type="button"></button>
+                      <button class="color-swatch mk63" type="button"></button>
+
+                      <button class="color-swatch mk64" type="button"></button>
+                    </div>
+                  </div>
+
+                  <div class="palette-group">
+                    <div class="group-label">Couleur secondaire</div>
+                    <div class="color-grid" data-swatch-group>
+                      <button class="color-swatch is-selected mk01" type="button"></button>
+                      <button class="color-swatch mk02" type="button"></button>
+                      <button class="color-swatch mk03" type="button"></button>
+                      <button class="color-swatch mk04" type="button"></button>
+                      <button class="color-swatch mk05" type="button"></button>
+                      <button class="color-swatch mk06" type="button"></button>
+                      <button class="color-swatch mk07" type="button"></button>
+                      <button class="color-swatch mk08" type="button"></button>
+                      <button class="color-swatch mk09" type="button"></button>
+
+                      <button class="color-swatch mk10" type="button"></button>
+                      <button class="color-swatch mk11" type="button"></button>
+                      <button class="color-swatch mk12" type="button"></button>
+                      <button class="color-swatch mk13" type="button"></button>
+                      <button class="color-swatch mk14" type="button"></button>
+                      <button class="color-swatch mk15" type="button"></button>
+                      <button class="color-swatch mk16" type="button"></button>
+                      <button class="color-swatch mk17" type="button"></button>
+                      <button class="color-swatch mk18" type="button"></button>
+
+                      <button class="color-swatch mk19" type="button"></button>
+                      <button class="color-swatch mk20" type="button"></button>
+                      <button class="color-swatch mk21" type="button"></button>
+                      <button class="color-swatch mk22" type="button"></button>
+                      <button class="color-swatch mk23" type="button"></button>
+                      <button class="color-swatch mk24" type="button"></button>
+                      <button class="color-swatch mk25" type="button"></button>
+                      <button class="color-swatch mk26" type="button"></button>
+                      <button class="color-swatch mk27" type="button"></button>
+
+                      <button class="color-swatch mk28" type="button"></button>
+                      <button class="color-swatch mk29" type="button"></button>
+                      <button class="color-swatch mk30" type="button"></button>
+                      <button class="color-swatch mk31" type="button"></button>
+                      <button class="color-swatch mk32" type="button"></button>
+                      <button class="color-swatch mk33" type="button"></button>
+                      <button class="color-swatch mk34" type="button"></button>
+                      <button class="color-swatch mk35" type="button"></button>
+                      <button class="color-swatch mk36" type="button"></button>
+
+                      <button class="color-swatch mk37" type="button"></button>
+                      <button class="color-swatch mk38" type="button"></button>
+                      <button class="color-swatch mk39" type="button"></button>
+                      <button class="color-swatch mk40" type="button"></button>
+                      <button class="color-swatch mk41" type="button"></button>
+                      <button class="color-swatch mk42" type="button"></button>
+                      <button class="color-swatch mk43" type="button"></button>
+                      <button class="color-swatch mk44" type="button"></button>
+                      <button class="color-swatch mk45" type="button"></button>
+
+                      <button class="color-swatch mk46" type="button"></button>
+                      <button class="color-swatch mk47" type="button"></button>
+                      <button class="color-swatch mk48" type="button"></button>
+                      <button class="color-swatch mk49" type="button"></button>
+                      <button class="color-swatch mk50" type="button"></button>
+                      <button class="color-swatch mk51" type="button"></button>
+                      <button class="color-swatch mk52" type="button"></button>
+                      <button class="color-swatch mk53" type="button"></button>
+                      <button class="color-swatch mk54" type="button"></button>
+
+                      <button class="color-swatch mk55" type="button"></button>
+                      <button class="color-swatch mk56" type="button"></button>
+                      <button class="color-swatch mk57" type="button"></button>
+                      <button class="color-swatch mk58" type="button"></button>
+                      <button class="color-swatch mk59" type="button"></button>
+                      <button class="color-swatch mk60" type="button"></button>
+                      <button class="color-swatch mk61" type="button"></button>
+                      <button class="color-swatch mk62" type="button"></button>
+                      <button class="color-swatch mk63" type="button"></button>
+
+                      <button class="color-swatch mk64" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-scroll">
+              <div class="custom-scroll-thumb" id="makeupPanelThumb"></div>
+            </div>
+          </div>
+        </section>
+        <section class="panel-page panel-page-identity" data-page="identity">
+          <div class="panel-box">
+            <div class="panel-section identity-section">
+              <div class="identity-field-group">
+                <label class="identity-label" for="identityFirstname">Prénom</label>
+                <input class="identity-input" id="identityFirstname" type="text" value="John">
+              </div>
+
+              <div class="identity-field-group">
+                <label class="identity-label" for="identityLastname">Nom</label>
+                <input class="identity-input" id="identityLastname" type="text" value="Doe">
+              </div>
+            </div>
+
+            <div class="panel-section identity-section">
+              <div class="identity-field-group">
+                <label class="identity-label" for="identityBirthDay">Jour de naissance</label>
+                <input class="identity-input" id="identityBirthDay" type="text" value="01">
+              </div>
+
+              <div class="identity-field-group">
+                <label class="identity-label" for="identityBirthMonth">Mois de naissance</label>
+                <input class="identity-input" id="identityBirthMonth" type="text" value="01">
+              </div>
+
+              <div class="identity-field-group">
+                <label class="identity-label" for="identityBirthYear">Année de naissance</label>
+                <input class="identity-input" id="identityBirthYear" type="text" value="1950">
+              </div>
+            </div>
+
+            <div class="panel-section identity-section">
+              <div class="panel-title">Tenue</div>
+
+              <div class="selector-row" data-selector="outfit">
+                <button class="arrow arrow-left" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="selector-name">Décontractée 1</div>
+                <button class="arrow arrow-right" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+            <button id="createCharacterBtn" class="identity-submit-button">
+                Créer mon personnage
+            </button>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
